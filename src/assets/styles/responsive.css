@@ -1,0 +1,536 @@
+/* ==========================================================================
+   Flexible Responsive Design System for Mobile (320px-767px) & iPad/Tablets (768px-1024px)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. iPad & Tablet Layouts (768px to 1024px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) and (max-width: 1024px) {
+  :root {
+    --sidebar-width: 84px;
+    --player-height: 80px;
+  }
+
+  .sidebar {
+    width: var(--sidebar-width);
+    padding: 1.25rem 0.5rem;
+  }
+
+  .sidebar-logo span,
+  .sidebar-nav-item span,
+  .sidebar-section-title,
+  .sidebar-playlists-list span,
+  .btn-create-playlist span {
+    display: none !important;
+  }
+
+  .sidebar-nav-item {
+    justify-content: center;
+    padding: 0.85rem 0;
+    border-radius: 12px;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+    padding: 0 0 1.5rem 0;
+  }
+
+  .main-wrapper {
+    height: calc(100vh - var(--player-height));
+  }
+
+  .page-content {
+    padding: 1.5rem 1.5rem 6rem 1.5rem;
+  }
+
+  .header {
+    padding: 1rem 1.5rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(165px, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+
+  .import-export-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+
+  .search-page-input-wrapper {
+    max-width: 100% !important;
+  }
+
+  .music-player {
+    left: var(--sidebar-width);
+    width: calc(100% - var(--sidebar-width));
+    padding: 0 1.5rem;
+  }
+
+  .player-scrubber {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .volume-wrapper {
+    width: 110px;
+  }
+
+  .mobile-fav-btn {
+    display: none !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Spotify & Custom Mobile Layout (320px to 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  :root {
+    --player-height: 64px;
+    --header-height: auto;
+  }
+
+  .app-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "main";
+    height: 100vh;
+    width: 100vw;
+    background-color: #0b0b0e;
+  }
+
+  .sidebar {
+    display: none !important;
+  }
+
+  .bottom-nav {
+    display: flex !important;
+    height: 56px;
+    background-color: #050507;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .main-wrapper {
+    height: 100vh;
+    padding-bottom: 130px;
+    background-color: #0b0b0e;
+  }
+
+  .page-content {
+    padding: 0.85rem 1rem 8rem 1rem !important;
+    background-color: #0b0b0e;
+  }
+
+  /* Header Mobile */
+  .header {
+    display: none !important;
+  }
+
+  /* Magenta Styled Section Titles */
+  .home-magenta-section {
+    margin-bottom: 1.5rem;
+  }
+
+  .magenta-header {
+    margin-bottom: 0.85rem;
+  }
+
+  .magenta-title {
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    color: #ec4899 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin: 0;
+  }
+
+  /* Top Mobile Search Header Bar (≡ [Search Input]) */
+  .home-top-search-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-top: 0.25rem;
+  }
+
+  .home-top-search-header .hamburger-btn {
+    color: #ffffff;
+    padding: 0.35rem;
+    flex-shrink: 0;
+  }
+
+  .home-search-form {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: #1a1a22;
+    border-radius: 10px;
+    padding: 0.55rem 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .search-magenta-icon {
+    color: #ec4899;
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+  }
+
+  .home-search-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  .home-search-input::placeholder {
+    color: #94a3b8;
+  }
+
+  /* 2-Column Playlist Cards (Matching User Image) */
+  .playlists-grid-2col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .playlist-pink-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+
+  .playlist-pink-art-container {
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #181820;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .playlist-pink-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .playlist-art-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    gap: 2px;
+  }
+
+  .playlist-art-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .playlist-pink-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .playlist-pink-name {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+
+  .playlist-pink-count {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+
+  /* Trending Carousel Row */
+  .trending-carousel-row {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .trending-carousel-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .trending-banner-card {
+    flex-shrink: 0;
+    width: 220px;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+  }
+
+  .trending-banner-card .banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .trending-banner-card .banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%);
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .banner-badge {
+    font-size: 0.65rem;
+    font-weight: 800;
+    background: #ec4899;
+    color: #ffffff;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    align-self: flex-start;
+    margin-bottom: 0.35rem;
+  }
+
+  .banner-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Spotify & Custom Song Row Layout */
+  .last-session-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .song-row-grid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.85rem !important;
+    padding: 0.65rem 0.25rem !important;
+    background: transparent !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  .song-row-thumb-wrapper {
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 8px !important;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .song-row-details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .song-row-title {
+    font-size: 0.92rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .song-row-subtext {
+    font-size: 0.78rem !important;
+    color: #94a3b8 !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .song-row-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    flex-shrink: 0;
+  }
+
+  /* Floating Mobile Music Player Bar (Dark Container Matching Image) */
+  .music-player {
+    position: fixed !important;
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 64px !important;
+    width: calc(100% - 20px) !important;
+    height: 58px !important;
+    padding: 0.4rem 0.85rem !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0d0d12 !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(16px);
+    z-index: 990 !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+  }
+
+  .player-left-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .player-thumb-wrapper {
+    width: 42px;
+    height: 42px;
+    border-radius: 6px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .player-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .player-title {
+    font-size: 0.88rem !important;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .player-center-controls {
+    display: none !important;
+  }
+
+  .player-right-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .mobile-fav-btn,
+  .mobile-play-btn,
+  .mobile-next-btn {
+    display: flex !important;
+    background: transparent;
+    border: none;
+    padding: 0.25rem;
+    cursor: pointer;
+  }
+
+  /* Mobile Transfer / Import-Export Page Layout */
+  .import-export-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+    margin-top: 1rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .transfer-card {
+    padding: 1.25rem !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .transfer-card-header {
+    gap: 0.85rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .transfer-card-header h3 {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .transfer-card-header p {
+    font-size: 0.8rem !important;
+    color: #94a3b8 !important;
+    line-height: 1.35 !important;
+  }
+
+  .transfer-icon-box {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .import-dropzone {
+    padding: 1.5rem 1rem !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Touch Safe Area & Desktop Utility Overrides
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+  .home-top-search-header {
+    display: none !important;
+  }
+
+  .playlists-grid-2col {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .bottom-nav {
+    display: none !important;
+  }
+
+  .mobile-fav-btn,
+  .mobile-play-btn,
+  .mobile-next-btn {
+    display: none !important;
+  }
+
+  .desktop-left-btn {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-content {
+    padding: 0.65rem 0.75rem 8rem 0.75rem !important;
+  }
+}
