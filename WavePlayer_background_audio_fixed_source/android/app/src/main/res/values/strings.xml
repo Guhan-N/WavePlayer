@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">WavePlayer</string>
+    <string name="title_activity_main">WavePlayer</string>
+    <string name="package_name">com.waveplayer.music</string>
+    <string name="custom_url_scheme">com.waveplayer.music</string>
+</resources>
